@@ -8,7 +8,19 @@
 
 ## 实测结果（RTX 3090 24GB）
 
-*数字在本仓库训练脚本跑完后回填；原始 JSON 与样例图随仓库发布。*
+| 模型 | 数据集 | 参数量 | 训练配置 | 实测结果 | 耗时 |
+|---|---|---|---|---|---|
+| **ViT**（从零） | CIFAR-10 | 4.77M | 40 epochs · bs256 · RandAugment+RandomErasing · bf16 AMP | **测试精度 83.52%** | 18.5 min |
+| **DDPM**（从零） | MNIST | 2.49M | 12 epochs · 400 步加噪 | ** ancestral 采样直接出可辨数字**（下图） | 4.8 min |
+
+<div align="center">
+  <img src="docs/ddpm_samples.png" width="384" alt="DDPM 采样的 32 个手写数字（4×8 网格）"/>
+  <p><sub>DDPM  ancestral 采样 · 仅训练 12 epoch · 400 去噪步 · 无任何预训练权重</sub></p>
+</div>
+
+> 两个诚实标注：① ViT 83.5% 是 40 epoch 的成绩——从零训练的 ViT 要到 90%+ 通常需要 100-200 epochs 或更强蒸馏增广（DeiT 式），本仓库保留这一诚实数字并把延长训练列为 Roadmap；② DDPM 的样例是 12 epoch 的快速收敛版，偶尔仍有笔画噪声——ε-MSE 收敛到 0.030（完整 JSON 在 `docs/`）。
+
+原始数据：`docs/vit_cifar10.json` · `docs/ddpm_mnist.json`（复现命令见下）。
 
 ## 两个模型，两种理解深度
 
@@ -36,6 +48,12 @@ uv run python train_ddpm.py         # MNIST 生成
 - `test_vit_cls_token_is_used`：扰动 class token 必须改变输出——防止"摆设 token"式错误实现
 - `test_unet_output_shape_any_input_size`：28×28（MNIST）与 32×32（CIFAR）双尺寸通过——UNet 的上下采样数学对奇数尺寸也成立
 - `test_sampling_starts_from_noise_ends_bounded`：采样输出有界 [-1,1]—— ancestrsal 采样数值稳定性的最低保证
+
+## 🛣 Roadmap
+
+- [ ] ViT 延长训练（100+ epochs）冲击 90%+，附训练曲线
+- [ ] Classifier-free guidance 引导采样
+- [ ] Grad-CAM 可解释性模块
 
 ## License
 

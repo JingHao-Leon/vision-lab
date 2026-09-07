@@ -1,0 +1,10 @@
+{
+  "model": "DDPM-from-scratch",
+  "dataset": "MNIST",
+  "params_m": 2.49,
+  "timesteps": 400,
+  "epochs": 12,
+  "final_eps_mse": 0.03004,
+  "minutes": 4.8,
+  "gpu": "NVIDIA GeForce RTX 3090"
+}

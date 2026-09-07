@@ -1,9 +1,9 @@
 {
   "schemaVersion": "mimosa-hook-status/v1",
-  "recordedAt": "2026-09-07T06:10:50.127Z",
+  "recordedAt": "2026-09-07T10:16:32.722Z",
   "sessionId": "sess_1fb22544-959c-48b1-be4d-b66df007736f",
   "event": "PostToolUse",
-  "toolName": "Write",
+  "toolName": "Edit",
   "file": "README.md",
   "outcome": "clear",
   "coverage": "complete",

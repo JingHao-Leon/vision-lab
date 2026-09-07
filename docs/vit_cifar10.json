@@ -1,0 +1,62 @@
+{
+  "model": "ViT-from-scratch",
+  "dataset": "CIFAR-10",
+  "params_m": 4.77,
+  "epochs": 40,
+  "batch_size": 256,
+  "best_test_acc": 0.8352,
+  "minutes": 18.5,
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "history": [
+    {
+      "epoch": 30,
+      "loss": 0.733,
+      "test_acc": 0.8244
+    },
+    {
+      "epoch": 31,
+      "loss": 0.6272,
+      "test_acc": 0.8264
+    },
+    {
+      "epoch": 32,
+      "loss": 0.6597,
+      "test_acc": 0.8255
+    },
+    {
+      "epoch": 33,
+      "loss": 0.6409,
+      "test_acc": 0.8248
+    },
+    {
+      "epoch": 34,
+      "loss": 0.6368,
+      "test_acc": 0.8284
+    },
+    {
+      "epoch": 35,
+      "loss": 0.6632,
+      "test_acc": 0.8286
+    },
+    {
+      "epoch": 36,
+      "loss": 0.4937,
+      "test_acc": 0.8309
+    },
+    {
+      "epoch": 37,
+      "loss": 0.6083,
+      "test_acc": 0.8331
+    },
+    {
+      "epoch": 38,
+      "loss": 0.5563,
+      "test_acc": 0.8341
+    },
+    {
+      "epoch": 39,
+      "loss": 0.5421,
+      "test_acc": 0.8352
+    }
+  ]
+}
