@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "stop-20260907T101926321Z-2905-17a183cedd1d",
+  "runId": "20260907T101926321Z-2905-17a183cedd1d",
+  "runStatus": "inconclusive",
+  "coverage": {
+    "status": "partial",
+    "reasons": [
+      {
+        "code": "baseline_partial",
+        "stage": "baseline",
+        "target": ".",
+        "detail": "baseline capture had enumeration or snapshot errors",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline",
+        "target": ".",
+        "detail": "baseline_partial: baseline capture had enumeration or snapshot errors",
+        "affectsCompletion": true
+      }
+    ]
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "Stop"
+  },
+  "revision": "02827665bc45edd90b25a765bdd602eb31d64566",
+  "diffHash": "62735e7716998a342d4ab5c715d2dc7d776b5ca9b0c9b41690768e6ef57602c2",
+  "rulesVersion": "unavailable",
+  "sessionHash": "3287675c0382f81054d354399f15db054cfd0c986612fe406930eb0c059a5106",
+  "reportRef": ".mimosa/reports/task-review-sess_1fb22544-959c-48b1-be4d-b66df007736f-20260907T101926321Z-2905-17a183cedd1d.json",
+  "events": [],
+  "observedFindingIds": [],
+  "verifiedFiles": [
+    {
+      "file": "vision_lab/__init__.py",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "vision_lab/vit.py",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "vision_lab/ddpm.py",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "train_vit.py",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "train_ddpm.py",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "tests/test_vision_lab.py",
+      "direct": "complete",
+      "projectContext": "partial"
+    }
+  ],
+  "recordedAt": "2026-09-07T10:19:26.585Z"
+}
