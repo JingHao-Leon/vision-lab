@@ -1,0 +1,16 @@
+[project]
+name = "vision-lab"
+version = "0.1.0"
+description = "ViT and DDPM from scratch: trained on CIFAR-10/MNIST, measured on RTX 3090"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.2", "torchvision>=0.17"]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["vision_lab"]
