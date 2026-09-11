@@ -1,14 +1,14 @@
 {
   "schemaVersion": "mimosa-hook-status/v1",
-  "recordedAt": "2026-09-07T13:20:11.505Z",
+  "recordedAt": "2026-09-11T12:47:44.101Z",
   "sessionId": "sess_1fb22544-959c-48b1-be4d-b66df007736f",
   "event": "PostToolUse",
-  "toolName": "Write",
-  "file": "/tmp/verify2.ps1",
+  "toolName": "Edit",
+  "file": "tests/test_vision_lab.py",
   "outcome": "clear",
   "coverage": "complete",
   "findingCount": 0,
-  "durationMs": 2,
+  "durationMs": 7,
   "hostState": "hook_complete",
   "reportHint": ".mimosa/reports/"
 }
