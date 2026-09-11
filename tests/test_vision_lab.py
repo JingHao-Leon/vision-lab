@@ -24,13 +24,18 @@ def test_vit_patch_count_matches_grid():
 
 def test_vit_cls_token_is_used():
     """Perturbing the class token must change the output (it's not dead weight)."""
+    # TF32 (Ampere default for conv) rounds the +1.0 perturbation below
+    # allclose tolerance on a 3090 — the test needs full fp32 numerics
+    torch.backends.cudnn.allow_tf32 = False
+    torch.backends.cuda.matmul.allow_tf32 = False
     model = ViT(img_size=32, patch=4, dim=64, depth=1, heads=4).eval()
     x = torch.randn(1, 3, 32, 32)
     with torch.no_grad():
         a = model(x)
         model.cls.data += 1.0
         b = model(x)
-    assert not torch.allclose(a, b)
+    torch.testing.assert_close(a, b, rtol=0.0, atol=0.0)  # must differ at all
+    assert not torch.allclose(a, b, rtol=1e-3)
 
 
 def test_vit_gradients_flow():
